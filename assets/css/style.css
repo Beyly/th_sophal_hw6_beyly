@@ -29,6 +29,7 @@ img {
 header {
   background-color: #ffffff;
   padding-block: 14px;
+  border-bottom: 1px solid #0f172a2c;
 }
 
 header .navbar {
@@ -64,9 +65,10 @@ header .navbar .navbar-nav .nav-item .nav-link {
   padding: 10px 24px;
   border-radius: 4px;
   color: #020617;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   text-transform: capitalize;
+  display: block;
 }
 
 header .navbar .navbar-nav .nav-item .nav-link i {
@@ -111,4 +113,106 @@ header .navbar .group-info .profile {
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
+  cursor: pointer;
+}
+
+header .navbar .navbar-nav .nav-item {
+  position: relative;
+}
+
+header .navbar .navbar-nav .nav-item .dropdown {
+  width: 260px;
+  position: absolute;
+  top: 100%;
+  display: none;
+}
+
+header .navbar .navbar-nav .nav-item:hover .dropdown {
+  display: block;
+  animation-name: animationDropdown;
+  animation-duration: 0.3s;
+}
+
+header .navbar .nav-item .dropdown .dropdown-body::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-left: 1px solid #0f172a2c;
+  border-top: 1px solid #0f172a2c;
+  background-color: #ffffff;
+  position: absolute;
+  top: -20px;
+  left: 40px;
+  transform: rotate(45deg);
+}
+
+header .navbar .nav-item .dropdown .dropdown-body {
+  border: 1px solid #0f172a2c;
+  background-color: #ffffff;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  border-radius: 6px;
+  padding: 10px 20px;
+}
+
+header .navbar .dropdown-body .dropdown-menu {
+  list-style-type: none;
+}
+
+header .navbar .dropdown-body .dropdown-menu .menu-item .menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding-block: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #020617;
+}
+
+header .navbar .dropdown-body .dropdown-menu .menu-item .menu-link i {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+header .navbar .dropdown-body .dropdown-menu .menu-item {
+  position: relative;
+}
+
+header .navbar .dropdown .sub-dropdown {
+  position: absolute;
+  width: 260px;
+  top: 0px;
+  left: 100%;
+  display: none;
+  padding-left: 20px;
+}
+
+header .navbar .dropdown-body .dropdown-menu .menu-item:hover .sub-dropdown {
+  display: block;
+  animation-name: animationDropdown;
+  animation-duration: 0.3s;
+}
+header .navbar .dropdown .sub-dropdown .sub-dropdown-body {
+  background-color: #ffffff;
+  border: 1px solid #0f172a2c;
+  border-radius: 6px;
+  padding: 10px 20px;
+}
+
+header .navbar .dropdown .sub-dropdown .sub-dropdown-body .sub-menu {
+  list-style-type: none;
+}
+
+/* ------- keyfram ------- */
+@keyframes animationDropdown {
+  from {
+    transform: translateY(30px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
